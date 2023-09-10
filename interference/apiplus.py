@@ -23,7 +23,7 @@ provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Ails
 
-providerList = [g4f.Provider.DeepAi, g4f.Provider.Liaobots, g4f.Provider.Liaobots, g4f.Provider.Ails]
+providerList = [ g4f.Provider.Ails,g4f.Provider.Liaobots, g4f.Provider.Liaobots, g4f.Provider.DeepAi,]
 
 app = Flask(__name__)
 CORS(app)
