@@ -23,9 +23,9 @@ PORT=3001
 providerList = [
 
 # dont not use,it return empty    g4f.Provider.Raycast,
+    g4f.Provider.Bing,
     g4f.Provider.DeepAi,
     g4f.Provider.ChatgptAi,
-    g4f.Provider.Bing,
     g4f.Provider.Theb,
     g4f.Provider.Ails,
     g4f.Provider.GetGpt,
