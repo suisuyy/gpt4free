@@ -56,8 +56,13 @@ def chat_completions():
     stream = request.get_json().get("stream", False)
     messages = request.get_json().get("messages")
     #response = ChatCompletion.create(model=model, stream=stream, messages=messages)
-    response = ChatCompletion.create(model=model, stream=stream, messages=messages,provider=provider, auth='na')
-
+    try:
+        response = ChatCompletion.create(model=model, stream=stream, messages=messages,provider=provider, auth='na')
+    except Exception as e:
+            print('error:',provider.__name__,providerIndex,'____________ streamming() error:',e,'lets try another provider!!!!!!')
+            providerIndex+=1;
+            providerIndex%=len(providerList);
+            provider=providerList[providerIndex%len(providerList)];
 
     completion_id = "".join(random.choices(string.ascii_letters + string.digits, k=28))
     completion_timestamp = int(time.time())
