@@ -9,6 +9,8 @@ from flask_cors import CORS
 
 from g4f import ChatCompletion
 
+PORT=3000
+
 app = Flask(__name__)
 CORS(app)
 
@@ -89,7 +91,7 @@ def chat_completions():
 
 
 def main():
-    app.run(host="0.0.0.0", port=1337, debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=True)
 
 
 if __name__ == "__main__":
