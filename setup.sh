@@ -16,6 +16,9 @@ pyenv install $PY_VERSIION
 pyenv versions
 pyenv global $PY_VERSIION
 
+pip install -r requirements.txt
+
+
 
 
 
