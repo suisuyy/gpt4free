@@ -24,6 +24,7 @@ provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Ails
 
 providerList = [ g4f.Provider.Ails,g4f.Provider.Liaobots, g4f.Provider.Liaobots, g4f.Provider.DeepAi,]
+providerIndex = 0;
 provider=providerList[0];
 
 
@@ -105,7 +106,9 @@ def chat_completions():
             yield f"data: {content}\n\n"
 
         except Exception as e:
-            print('____________ streamming() error:',e,'lets try another provider!!!!!!')
+            print(provider.__name__,'____________ streamming() error:',e,'lets try another provider!!!!!!')
+            providerIndex+=1;
+            provider=providerList[providerIndex%len(providerList)];
 
 
 
