@@ -56,7 +56,7 @@ def chat_completions():
     stream = request.get_json().get("stream", False)
     messages = request.get_json().get("messages")
     #response = ChatCompletion.create(model=model, stream=stream, messages=messages)
-    response = ChatCompletion.create(model=model, stream=stream, messages=messages,provider=provider)
+    response = ChatCompletion.create(model=model, stream=stream, messages=messages,provider=provider, auth='na')
 
 
     completion_id = "".join(random.choices(string.ascii_letters + string.digits, k=28))
