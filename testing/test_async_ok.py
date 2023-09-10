@@ -24,15 +24,19 @@ async def create_async(provider: AsyncProvider):
     except Exception as e:
         return e
 
+
+
 async def run_async():
-  _providers: list[AsyncProvider] = [
-    _provider
-    for _provider in get_providers()
-    if _provider.working and hasattr(_provider, "create_async")
-  ]
-  responses = [create_async(_provider) for _provider in _providers]
-  responses = await asyncio.gather(*responses)
-  for idx, provider in enumerate(_providers):
-      print(f"{provider.__name__}:", responses[idx])
+    _providers: list[AsyncProvider] = [
+        _provider
+        for _provider in get_providers()
+        if _provider.working and hasattr(_provider, "create_async")
+    ]
+    tasks = [create_async(_provider) for _provider in _providers]
+    for idx, task in enumerate(asyncio.as_completed(tasks)):
+        response = await task
+        print(f"{_providers[idx].__name__}: {response}")
+
 
 print("Total:", asyncio.run(log_time_async(run_async)))
+
