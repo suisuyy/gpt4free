@@ -109,12 +109,14 @@ def chat_completions():
             }
             content = json.dumps(end_completion_data, separators=(",", ":"))
             yield f"data: {content}\n\n"
+            return;
 
         except Exception as e:
             print(provider.__name__,providerIndex,'____________ streamming() error:',e,'lets try another provider!!!!!!')
             providerIndex+=1;
             providerIndex%=len(providerList);
             provider=providerList[providerIndex%len(providerList)];
+            streaming()
 
 
 
