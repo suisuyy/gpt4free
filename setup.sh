@@ -13,8 +13,10 @@ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 . ~/.bash_profile
 
 pyenv install $PY_VERSIION
-
+pyenv versions
 pyenv global $PY_VERSIION
+
+
 
 
 
