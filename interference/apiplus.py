@@ -21,9 +21,9 @@ PORT=3001
 
 
 providerList = [
-    
+
 #    g4f.Provider.Raycast,
-#    g4f.Provider.GetGpt,
+    g4f.Provider.GetGpt,
     g4f.Provider.ChatgptAi,
     g4f.Provider.Bing,
     g4f.Provider.Theb,
