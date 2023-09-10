@@ -115,7 +115,7 @@ def chat_completions():
             providerIndex+=1;
             providerIndex%=len(providerList);
             provider=providerList[providerIndex%len(providerList)];
-            yield from streaming()
+
 
 
 
