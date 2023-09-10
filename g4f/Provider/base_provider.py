@@ -22,7 +22,7 @@ class BaseProvider(ABC):
         model: str,
         messages: list[dict[str, str]],
         stream: bool, **kwargs: Any) -> CreateResult:
-        
+
         raise NotImplementedError()
 
     @classmethod
@@ -35,7 +35,7 @@ class BaseProvider(ABC):
         ]
         param = ", ".join([": ".join(p) for p in params])
         return f"g4f.provider.{cls.__name__} supports: ({param})"
-    
+
 
 _cookies = {}
 
@@ -68,7 +68,7 @@ class AsyncProvider(BaseProvider):
         model: str,
         messages: list[dict[str, str]],
         stream: bool = False, **kwargs: Any) -> CreateResult:
-        
+
         yield asyncio.run(cls.create_async(model, messages, **kwargs))
 
     @staticmethod
@@ -102,7 +102,7 @@ class AsyncGeneratorProvider(AsyncProvider):
         chunks = [chunk async for chunk in cls.create_async_generator(model, messages, stream=False, **kwargs)]
         if chunks:
             return "".join(chunks)
-        
+
     @staticmethod
     @abstractmethod
     def create_async_generator(
