@@ -42,6 +42,7 @@ def chat_completions():
 
     completion_id = "".join(random.choices(string.ascii_letters + string.digits, k=28))
     completion_timestamp = int(time.time())
+    print('provider info______',providerIndex,provider.__name__)
 
     if not stream:
         return {
