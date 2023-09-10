@@ -64,21 +64,21 @@ def chat_completions():
     def streaming():
         try:
             for chunk in response:
-            completion_data = {
-                "id": f"chatcmpl-{completion_id}",
-                "object": "chat.completion.chunk",
-                "created": completion_timestamp,
-                "model": model,
-                "choices": [
-                    {
-                        "index": 0,
-                        "delta": {
-                            "content": chunk,
-                        },
-                        "finish_reason": None,
-                    }
-                ],
-            }
+                completion_data = {
+                    "id": f"chatcmpl-{completion_id}",
+                    "object": "chat.completion.chunk",
+                    "created": completion_timestamp,
+                    "model": model,
+                    "choices": [
+                        {
+                            "index": 0,
+                            "delta": {
+                                "content": chunk,
+                            },
+                            "finish_reason": None,
+                        }
+                    ],
+                }
 
             content = json.dumps(completion_data, separators=(",", ":"))
             yield f"data: {content}\n\n"
