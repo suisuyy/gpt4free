@@ -18,12 +18,10 @@ from pathlib import Path
 
 PORT=3001
 
-provider=g4f.Provider.DeepAi
-provider=g4f.Provider.Liaobots
-provider=g4f.Provider.Liaobots
-provider=g4f.Provider.Ails
+
 
 providerList = [
+    g4f.Provider.Theb,
     g4f.Provider.Ails,
     g4f.Provider.DeepAi,
 
