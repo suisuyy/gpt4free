@@ -12,9 +12,11 @@ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 
 . ~/.bash_profile
 
-pyenv install $p
+pyenv install $PY_VERSIION
 
-pyenv global 3.10.4
+pyenv global $PY_VERSIION
+
+
 
 
 
