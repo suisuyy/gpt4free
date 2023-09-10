@@ -50,11 +50,12 @@ CORS(app)
 
 @app.route("/chat/completions", methods=["POST"])
 def chat_completions():
-    print('\n\n_____________start chat_completions(),provider info',providerIndex,provider.__name__)
-
     global providerIndex
     global provider
     global providerList
+
+    print('\n\n_____________start chat_completions(),provider info',providerIndex,provider.__name__)
+
 
     model = request.get_json().get("model", "gpt-3.5-turbo")
     stream = request.get_json().get("stream", False)
