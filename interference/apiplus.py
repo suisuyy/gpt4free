@@ -25,8 +25,9 @@ provider=g4f.Provider.Ails
 
 providerList = [
     g4f.Provider.Ails,
-    g4f.Provider.Liaobots,
     g4f.Provider.DeepAi,
+    
+
 ]
 providerIndex = 0;
 provider=providerList[0];
