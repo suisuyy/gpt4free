@@ -23,6 +23,8 @@ provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Ails
 
+providerList = [g4f.Provider.DeepAi, g4f.Provider.Liaobots, g4f.Provider.Liaobots, g4f.Provider.Ails]
+
 app = Flask(__name__)
 CORS(app)
 
@@ -101,7 +103,8 @@ def chat_completions():
             yield f"data: {content}\n\n"
 
         except Exception as e:
-            print('____________ streamming() error:',e)
+            print('____________ streamming() error:',e,'lets try another provider!!!!!!')
+
 
 
     try:
