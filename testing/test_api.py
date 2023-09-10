@@ -8,7 +8,7 @@ openai.api_base = "http://localhost:3001"
 def main():
     chat_completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": "write a poem about a tree"}],
+        messages=[{"role": "user", "content": "just say Ok,not okay"}],
         stream=True,
     )
 
