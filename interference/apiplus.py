@@ -62,7 +62,8 @@ def chat_completions():
         }
 
     def streaming():
-        for chunk in response:
+        try:
+            for chunk in response:
             completion_data = {
                 "id": f"chatcmpl-{completion_id}",
                 "object": "chat.completion.chunk",
@@ -83,21 +84,26 @@ def chat_completions():
             yield f"data: {content}\n\n"
             time.sleep(0.1)
 
-        end_completion_data: dict[str, Any] = {
-            "id": f"chatcmpl-{completion_id}",
-            "object": "chat.completion.chunk",
-            "created": completion_timestamp,
-            "model": model,
-            "choices": [
-                {
-                    "index": 0,
-                    "delta": {},
-                    "finish_reason": "stop",
-                }
-            ],
-        }
-        content = json.dumps(end_completion_data, separators=(",", ":"))
-        yield f"data: {content}\n\n"
+            end_completion_data: dict[str, Any] = {
+                "id": f"chatcmpl-{completion_id}",
+                "object": "chat.completion.chunk",
+                "created": completion_timestamp,
+                "model": model,
+                "choices": [
+                    {
+                        "index": 0,
+                        "delta": {},
+                        "finish_reason": "stop",
+                    }
+                ],
+            }
+            content = json.dumps(end_completion_data, separators=(",", ":"))
+            yield f"data: {content}\n\n"
+
+        except Exception as e:
+            print('____________ streamming() error:',e)
+
+
     try:
         return app.response_class(streaming(), mimetype="text/event-stream")
     except Exception as e:
