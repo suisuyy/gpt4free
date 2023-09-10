@@ -15,7 +15,7 @@ async def create_async(provider: AsyncProvider):
         response =  await log_time_async(
             provider.create_async,
             model=model,
-            messages=[{"role": "user", "content": "just say ok to me"}],
+            messages=[{"role": "user", "content": "write a long story"}],
             stream=True,
         )
         assert type(response) is str
