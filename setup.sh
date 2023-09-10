@@ -1,4 +1,4 @@
-export PY_VERSIION='3.10.4'
+export PY_VERSIION='3.10.4'  #set py version,gpt4free need python <3.11 currently
 
 sudo apt update; sudo apt install -y build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev curl \
