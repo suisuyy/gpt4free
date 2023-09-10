@@ -5,3 +5,16 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 curl https://pyenv.run | bash
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
