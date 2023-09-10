@@ -37,6 +37,8 @@ CORS(app)
 
 @app.route("/chat/completions", methods=["POST"])
 def chat_completions():
+    print('\n\n_____________start chat_completions(),provider info',providerIndex,provider.__name__)
+
     model = request.get_json().get("model", "gpt-3.5-turbo")
     stream = request.get_json().get("stream", False)
     messages = request.get_json().get("messages")
@@ -46,7 +48,6 @@ def chat_completions():
 
     completion_id = "".join(random.choices(string.ascii_letters + string.digits, k=28))
     completion_timestamp = int(time.time())
-    print('_____________provider info',providerIndex,provider.__name__)
 
     if not stream:
         return {
