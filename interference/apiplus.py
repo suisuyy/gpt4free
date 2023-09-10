@@ -21,7 +21,7 @@ PORT=3001
 
 
 providerList = [
-    g4f.Provider.GetGpt,
+#    g4f.Provider.GetGpt,
     g4f.Provider.ChatgptAi,
     g4f.Provider.Bing,
     g4f.Provider.Theb,
@@ -46,7 +46,7 @@ def chat_completions():
     global provider
     global providerList
 
-    print('\n\n_____________start chat_completions(),provider info',providerIndex,provider.__name__)
+    print('\n\n_____________start chat_completions()',providerIndex,provider.__name__)
 
 
     model = request.get_json().get("model", "gpt-3.5-turbo")
