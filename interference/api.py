@@ -1,8 +1,3 @@
-
-
-
-
-
 import json
 import random
 import string
@@ -15,6 +10,10 @@ from flask_cors import CORS
 
 from g4f import ChatCompletion
 import g4f
+
+
+PORT=3001
+
 provider=g4f.Provider.DeepAi
 provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Liaobots

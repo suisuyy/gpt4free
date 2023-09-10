@@ -2,7 +2,7 @@
 import openai
 
 openai.api_key = ""
-openai.api_base = "http://localhost:3000"
+openai.api_base = "http://localhost:3001"
 
 
 def main():
