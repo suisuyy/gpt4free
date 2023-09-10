@@ -20,6 +20,7 @@ pyenv global $PY_VERSIION
 python --version
 
 pip install -r requirements.txt
+pip install -r in
 
 
 
