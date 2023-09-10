@@ -1,7 +1,7 @@
 while true; do
 
 
-python testing/test_api.py
+python testing/test_api.py && echo "test passed"
 
 
 
