@@ -98,8 +98,10 @@ def chat_completions():
         }
         content = json.dumps(end_completion_data, separators=(",", ":"))
         yield f"data: {content}\n\n"
-
-    return app.response_class(streaming(), mimetype="text/event-stream")
+    try:
+        return app.response_class(streaming(), mimetype="text/event-stream")
+    except Exception as e:
+        print(e)
 
 
 
