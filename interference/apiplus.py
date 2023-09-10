@@ -110,10 +110,10 @@ def chat_completions():
             yield f"data: {content}\n\n"
 
         except Exception as e:
-            print(provider.__name__,'____________ streamming() error:',e,'lets try another provider!!!!!!')
+            print(provider.__name__,providerIndex,'____________ streamming() error:',e,'lets try another provider!!!!!!')
             providerIndex+=1;
             provider=providerList[providerIndex%len(providerList)];
-            
+
 
 
     try:
