@@ -31,9 +31,7 @@ async def run_async():
     if _provider.working and hasattr(_provider, "create_async")
   ]
   responses = [create_async(_provider) for _provider in _providers]
-#  responses = await asyncio.gather(*responses)
-  responses = asyncio.gather(*responses)
-  
+  responses = await asyncio.gather(*responses)
   for idx, provider in enumerate(_providers):
       print(f"{provider.__name__}:", responses[idx])
 
