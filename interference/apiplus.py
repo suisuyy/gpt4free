@@ -67,6 +67,10 @@ def chat_completions():
         }
 
     def streaming():
+        global providerIndex
+        global provider
+        global providerList
+
         try:
             for chunk in response:
                 completion_data = {
@@ -109,7 +113,7 @@ def chat_completions():
             print(provider.__name__,'____________ streamming() error:',e,'lets try another provider!!!!!!')
             providerIndex+=1;
             provider=providerList[providerIndex%len(providerList)];
-
+            
 
 
     try:
