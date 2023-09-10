@@ -26,9 +26,21 @@ provider=g4f.Provider.Ails
 providerList = [
     g4f.Provider.Ails,
     g4f.Provider.DeepAi,
-    
+
 
 ]
+
+providerList = [
+      g4f.Provider.Bard,
+      g4f.Provider.Bing,
+      g4f.Provider.H2o,
+      g4f.Provider.HuggingChat,
+      g4f.Provider.Liaobots,
+      g4f.Provider.OpenAssistant,
+      g4f.Provider.OpenaiChat,
+      g4f.Provider.You,
+      g4f.Provider.Yqcloud,
+  ]
 providerIndex = 0;
 provider=providerList[0];
 
