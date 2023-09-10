@@ -21,6 +21,7 @@ PORT=3001
 
 
 providerList = [
+    g4f.Provider.ChatgptAi,
     g4f.Provider.Bing,
     g4f.Provider.Theb,
     g4f.Provider.Ails,
