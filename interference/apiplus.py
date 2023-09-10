@@ -108,10 +108,9 @@ def chat_completions():
                         }
                     ],
                 }
-
-            content = json.dumps(completion_data, separators=(",", ":"))
-            yield f"data: {content}\n\n"
-            time.sleep(0.1)
+                content = json.dumps(completion_data, separators=(",", ":"))
+                yield f"data: {content}\n\n"
+                time.sleep(0.1)
 
             end_completion_data: dict[str, Any] = {
                 "id": f"chatcmpl-{completion_id}",
