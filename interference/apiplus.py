@@ -108,34 +108,6 @@ def chat_completions():
 
 
 
-async def create_async(provider: AsyncProvider):
-    model = g4f.models.gpt_35_turbo.name if provider.supports_gpt_35_turbo else g4f.models.default.name
-    try:
-        response =  await log_time_async(
-            provider.create_async,
-            model=model,
-            messages=[{"role": "user", "content": "say ok!"}]
-        )
-        assert type(response) is str
-        assert len(response) > 0
-        return response
-    except Exception as e:
-        return e
-
-async def run_async():
-  _providers: list[AsyncProvider] = [
-    _provider
-    for _provider in get_providers()
-    if _provider.working and hasattr(_provider, "create_async")
-  ]
-  responses = [create_async(_provider) for _provider in _providers]
-  responses = await asyncio.gather(*responses)
-  for idx, provider in enumerate(_providers):
-      print(f"{provider.__name__}:", responses[idx])
-
-
-
-
 def main():
     app.run(host="0.0.0.0", port=PORT, debug=True)
 
