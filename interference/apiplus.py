@@ -101,7 +101,7 @@ def chat_completions():
     try:
         return app.response_class(streaming(), mimetype="text/event-stream")
     except Exception as e:
-        print(e)
+        print('____________error:',e)
 
 
 
