@@ -96,6 +96,9 @@ def chat_completions():
         }
 
     def streaming():
+        global providerIndex
+        global provider
+        global providerList
         try:
             for chunk in response:
                 completion_data = {
