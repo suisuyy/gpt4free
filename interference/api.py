@@ -15,7 +15,7 @@ from flask_cors import CORS
 
 from g4f import ChatCompletion
 import g4f
- provider=g4f.Provider.DeepAi
+provider=g4f.Provider.DeepAi
 provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Liaobots
 provider=g4f.Provider.Ails
